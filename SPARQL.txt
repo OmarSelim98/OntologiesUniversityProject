@@ -1,0 +1,47 @@
+
+Showing courses and the doctors who teach the courses
+
+SELECT ?id ?doctorName  WHERE {
+ ?course a uri:Course .
+ ?course uri:ID ?id .
+ ?instructor a uri:Doctor .
+ ?instructor uri:teach ?course .
+ ?instructor  uri:Name ?doctorName .
+}
+
+Showing courses and the TA who teach the courses
+
+SELECT ?id ?taName  WHERE {
+ ?course a uri:Course .
+ ?course uri:ID ?id .
+ ?instructor a uri:TA .
+ ?instructor uri:teach ?course .
+ ?instructor  uri:Name ?taName .
+}
+
+Students who take computer programming.
+
+SELECT ?studentName ?GPA WHERE {
+ ?student a uri:undergraduate .
+ ?student uri:attend uri:Computer_Programming .
+ ?student uri:Name ?studentName.
+}
+
+list all students in MD department
+
+SELECT ?name WHERE {
+?student a uri:Master_student .
+?student uri:department "MD"^^xsd:string .
+?student uri:Name ?studentInMD .
+}
+
+List all undergrad students with all of their information
+
+SELECT ?id ?name ?gpa ?phone ?address WHERE {
+ ?student a uri:undergraduate .
+ ?student uri:Student_ID ?id .
+?student uri:Name ?name .
+?student uri:Student_GPA ?gpa .
+?student uri:Phone_Number ?phone .
+?student uri:Address ?address .
+}

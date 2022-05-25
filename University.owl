@@ -1,0 +1,558 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ashra/ontologies/2022/4/untitled-ontology-2"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/ashra/ontologies/2022/4/untitled-ontology-2">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Computer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Course"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Department"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Doctor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Electrical"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Instructor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Master_student"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mechanical"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PHD_student"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Postgraduate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Student"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TA"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#undergraduate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#attend"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#teach"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Address"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Field_Of_Research"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Instructor_ID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Phone_Number"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Student_GPA"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Student_ID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#department"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#email"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#prerequisite"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Computer_Programming"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mohamed"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nada"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Power_Electronics_3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Professor_Salma"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Proffessor_Yehia"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Computer"/>
+        <Class IRI="#Department"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Doctor"/>
+        <Class IRI="#Instructor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Electrical"/>
+        <Class IRI="#Department"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Instructor"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Instructor"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectProperty IRI="#teach"/>
+            <Class IRI="#Course"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Instructor"/>
+        <ObjectMaxCardinality cardinality="4">
+            <ObjectProperty IRI="#teach"/>
+            <Class IRI="#Course"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Master_student"/>
+        <Class IRI="#Postgraduate"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mechanical"/>
+        <Class IRI="#Department"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PHD_student"/>
+        <Class IRI="#Postgraduate"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Postgraduate"/>
+        <Class IRI="#Student"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Student"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Student"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#attend"/>
+            <Class IRI="#Course"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TA"/>
+        <Class IRI="#Instructor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#undergraduate"/>
+        <Class IRI="#Student"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Course"/>
+        <NamedIndividual IRI="#Computer_Programming"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#undergraduate"/>
+        <NamedIndividual IRI="#Mohamed"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Master_student"/>
+        <NamedIndividual IRI="#Nada"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Course"/>
+        <NamedIndividual IRI="#Power_Electronics_3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Doctor"/>
+        <NamedIndividual IRI="#Professor_Salma"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#attend"/>
+        <NamedIndividual IRI="#Mohamed"/>
+        <NamedIndividual IRI="#Computer_Programming"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#attend"/>
+        <NamedIndividual IRI="#Nada"/>
+        <NamedIndividual IRI="#Power_Electronics_3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#teach"/>
+        <NamedIndividual IRI="#Professor_Salma"/>
+        <NamedIndividual IRI="#Power_Electronics_3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#teach"/>
+        <NamedIndividual IRI="#Proffessor_Yehia"/>
+        <NamedIndividual IRI="#Computer_Programming"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ID"/>
+        <NamedIndividual IRI="#Computer_Programming"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">CSE201</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Address"/>
+        <NamedIndividual IRI="#Mohamed"/>
+        <Literal datatypeIRI="&xsd;string">18 Hassanen heikal, Nasr city</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Name"/>
+        <NamedIndividual IRI="#Mohamed"/>
+        <Literal datatypeIRI="&xsd;string">Mohamed Ahmed</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Phone_Number"/>
+        <NamedIndividual IRI="#Mohamed"/>
+        <Literal datatypeIRI="&xsd;string">01073684627</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Student_GPA"/>
+        <NamedIndividual IRI="#Mohamed"/>
+        <Literal datatypeIRI="&xsd;double">2.4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Student_ID"/>
+        <NamedIndividual IRI="#Mohamed"/>
+        <Literal datatypeIRI="&xsd;string">19p2831</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#department"/>
+        <NamedIndividual IRI="#Mohamed"/>
+        <Literal datatypeIRI="&xsd;string">CESS</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#email"/>
+        <NamedIndividual IRI="#Mohamed"/>
+        <Literal datatypeIRI="&xsd;string">mohamed.ahmed@gmail.com</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Address"/>
+        <NamedIndividual IRI="#Nada"/>
+        <Literal datatypeIRI="&xsd;string">18 Gamal Hussien, New Cairo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Name"/>
+        <NamedIndividual IRI="#Nada"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Nada Ahmed Salah</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Phone_Number"/>
+        <NamedIndividual IRI="#Nada"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">012793763821</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Student_ID"/>
+        <NamedIndividual IRI="#Nada"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">15H8261</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#department"/>
+        <NamedIndividual IRI="#Nada"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">MD</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#email"/>
+        <NamedIndividual IRI="#Nada"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">nada.salah@gmail.com</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ID"/>
+        <NamedIndividual IRI="#Power_Electronics_3"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">MD500</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#prerequisite"/>
+        <NamedIndividual IRI="#Power_Electronics_3"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">MD430</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Address"/>
+        <NamedIndividual IRI="#Professor_Salma"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">12 Horreya , Cairo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Instructor_ID"/>
+        <NamedIndividual IRI="#Professor_Salma"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">17e2983</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Name"/>
+        <NamedIndividual IRI="#Professor_Salma"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Salma Gamal Sayed</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Phone_Number"/>
+        <NamedIndividual IRI="#Professor_Salma"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">01275478829</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#department"/>
+        <NamedIndividual IRI="#Professor_Salma"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">MD</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#email"/>
+        <NamedIndividual IRI="#Professor_Salma"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">salma.gamal@gmail.com</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Address"/>
+        <NamedIndividual IRI="#Proffessor_Yehia"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">16 nasr rd. , nasr city</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Instructor_ID"/>
+        <NamedIndividual IRI="#Proffessor_Yehia"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">12e2822</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Name"/>
+        <NamedIndividual IRI="#Proffessor_Yehia"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Yehia AbdelAzim</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Phone_Number"/>
+        <NamedIndividual IRI="#Proffessor_Yehia"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">017356278932</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#department"/>
+        <NamedIndividual IRI="#Proffessor_Yehia"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">CESS</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#email"/>
+        <NamedIndividual IRI="#Proffessor_Yehia"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">yehia.abdelazim@gmail.com</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#attend"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#teach"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#attend"/>
+        <Class IRI="#Student"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#teach"/>
+        <Class IRI="#Instructor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#attend"/>
+        <Class IRI="#Course"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#teach"/>
+        <Class IRI="#Course"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Address"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Field_Of_Research"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#ID"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Instructor_ID"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Name"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Phone_Number"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Student_GPA"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Student_ID"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#email"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#prerequisite"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Address"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Field_Of_Research"/>
+        <Class IRI="#Instructor"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ID"/>
+        <Class IRI="#Course"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Instructor_ID"/>
+        <Class IRI="#Instructor"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Name"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Phone_Number"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Student_GPA"/>
+        <Class IRI="#undergraduate"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Student_GPA"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Student_GPA"/>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;integer">0</Literal>
+                </FacetRestriction>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;integer">4</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataSomeValuesFrom>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Student_ID"/>
+        <Class IRI="#Student"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#department"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#department"/>
+        <ObjectUnionOf>
+            <DataHasValue>
+                <DataProperty IRI="#department"/>
+                <Literal datatypeIRI="&rdf;PlainLiteral">CESS</Literal>
+            </DataHasValue>
+            <DataHasValue>
+                <DataProperty IRI="#department"/>
+                <Literal datatypeIRI="&rdf;PlainLiteral">EED</Literal>
+            </DataHasValue>
+            <DataHasValue>
+                <DataProperty IRI="#department"/>
+                <Literal datatypeIRI="&rdf;PlainLiteral">MD</Literal>
+            </DataHasValue>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#email"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#prerequisite"/>
+        <Class IRI="#Course"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#Address"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Field_Of_Research"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#ID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Instructor_ID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Phone_Number"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Student_GPA"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Student_ID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#department"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#email"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#prerequisite"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
